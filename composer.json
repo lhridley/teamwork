@@ -1,0 +1,197 @@
+{
+    "name": "codementality/drupal-project",
+    "description": "Project template for Drupal 8 projects with Composer",
+    "type": "project",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "Lisa Ridley <lisa@codementality.com>",
+            "role": "Sr. Solutions Architect"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://packages.drupal.org/8"
+        },
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        }
+    ],
+    "require": {
+        "php": ">=7.2",
+        "composer/installers": "^1.2",
+        "cweagans/composer-patches": "^1.6.5",
+        "drupal-composer/drupal-scaffold": "^2.5",
+        "bower-asset/blazy": "^1.8",
+        "bower-asset/bootstrap": "^4.3",
+        "drupal/address": "^1.7",
+        "drupal/admin_toolbar_tools": "^1.26",
+        "drupal/bg_image_formatter": "^1.6",
+        "drupal/blazy": "^2.0@RC",
+        "drupal/block_exclude_pages": "^1.3",
+        "drupal/block_field": "^1.0@alpha",
+        "drupal/ckeditor_uploadimage": "^1.5",
+        "drupal/components": "^1.1",
+        "drupal/config_split": "^1.4",
+        "drupal/console": "^1.0.2",
+        "drupal/core": "^8.7.0",
+        "drupal/ctools": "3.x-dev",
+        "drupal/devel": "~2.0",
+        "drupal/devel_entity_updates": "^1.0",
+        "drupal/diff": "^1.0@RC",
+        "drupal/easy_breadcrumb": "^1.12",
+        "drupal/email_registration":"^1.0",
+        "drupal/embed": "^1.0",
+        "drupal/entity": "^1.0@alpha",
+        "drupal/entity_browser": "^2.0",
+        "drupal/entity_embed": "^1.0",
+        "drupal/entity_usage": "^2.0",
+        "drupal/environment_indicator": "^3.6",
+        "drupal/facets": "^1.3",
+        "drupal/field_permissions": "^1.0@RC",
+        "drupal/field_validation": "^1.0@alpha",
+        "drupal/focal_point": "^1.0@beta",
+        "drupal/gesso": "^3.0",
+        "drupal/imageapi_optimize": "^2.0@alpha",
+        "drupal/imageapi_optimize_resmushit": "^1.0@beta",
+        "drupal/inline_responsive_images": "^2.1",
+        "drupal/linkit": "^4.3",
+        "drupal/menu_link_attributes": "^1.0",
+        "drupal/metatag": "^1.8",
+        "drupal/module_filter": "^3.1",
+        "drupal/paragraphs": "^1.5",
+        "drupal/pathauto": "^1.3",
+        "drupal/redirect": "^1.3",
+        "drupal/search_api_attachments": "^1.0",
+        "drupal/search_api_solr": "^1.0",
+        "drupal/scheduler": "^1.0",
+        "drupal/smart_trim": "^1.1",
+        "drupal/styleguide": "^1.0@alpha",
+        "drupal/telephone_formatter": "^1.0",
+        "drupal/video_embed_field": "^2.0",
+        "drupal/views_contextual_filters_or": "^1.1",
+        "drupal/views_extras": "^1.1",
+        "drupal/views_infinite_scroll": "^1.5",
+        "drupal/viewsreference": "^1.4",        
+        "drush/drush": "^9.0.0",
+        "vlucas/phpdotenv": "^2.4",
+        "oomphinc/composer-installers-extender": "^1.1",
+        "webflo/drupal-finder": "^1.0.0",
+        "webmozart/path-util": "^2.3",
+        "zaporylie/composer-drupal-optimizations": "^1.0"
+    },
+    "require-dev": {
+        "behat/mink-selenium2-driver": "^1.3",
+        "drupal/drupal-extension": "^4.0@beta",
+        "guzzlehttp/guzzle": "^6.0@dev",
+        "mglaman/drupal-check": "^1.0",
+        "phpunit/phpunit": ">=4.8.24",
+        "roave/security-advisories": "dev-master",
+        "genesis/behat-fail-aid": "^2.1",
+        "vanare/behat-cucumber-json-formatter": "~1.1.1",
+        "webflo/drupal-core-require-dev": "^8.7.0"
+    },
+    "conflict": {
+        "drupal/drupal": "*"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "sort-packages": true,
+        "bin-dir": "bin/"
+    },
+    "autoload": {
+        "classmap": [
+            "scripts/composer/ScriptHandler.php"
+        ],
+        "files": [
+            "load.environment.php"
+        ]
+    },
+    "scripts": {
+        "pre-install-cmd": [
+            "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
+        ],
+        "pre-update-cmd": [
+            "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
+        ],
+        "post-install-cmd": [
+            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+        ],
+        "post-update-cmd": [
+            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+        ]
+    },
+    "extra": {
+        "composer-exit-on-patch-failure": true,
+        "patchLevel": {
+            "drupal/core": "-p2"
+        },
+        "installer-paths": {
+            "drush/Commands/{$name}": [
+                "type:drupal-drush"
+            ],
+            "docroot/libraries/{$name}": [
+                "type:drupal-library",
+                "type:component",
+                "type:bower-asset",
+                "type:npm-asset"
+            ],
+            "docroot/profiles/contrib/{$name}": [
+                "type:drupal-profile"
+            ],
+            "docroot/modules/contrib/{$name}": [
+                "type:drupal-module"
+            ],
+            "docroot/themes/contrib/{$name}": [
+                "type:drupal-theme"
+            ],
+            "docroot/core": [
+                "type:drupal-core"
+            ]
+        },
+        "drupal-scaffold": {
+            "initial": {
+                ".editorconfig": "../.editorconfig",
+                ".gitattributes": "../.gitattributes"
+            }
+        },
+        "installer-types": [
+            "component",
+            "bower-asset",
+            "npm-asset"
+        ],
+        "patches": {
+            "drupal/core": {
+                "User can't reference unpublished content even when he has access to it": "https://www.drupal.org/files/issues/2019-03-26/user_cant_reference_unpublished_content-2845144-24.patch",
+                "Add title attribute to oEmbed iframe for accessibility": "https://www.drupal.org/files/issues/2019-04-25/3021452-18.patch",
+                "template_preprocess_username fails to set language attribute":"https://www.drupal.org/files/issues/2019-03-24/drupal-template_preprocess_username-language-attribute-3042984-2.patch",
+                "Cannot use relationship for rendered entity on Views": "https://www.drupal.org/files/issues/2019-05-04/2457999-194.patch",
+                "Media Browser AJAX error: Broken title in modal dialog when title is a render array": "https://www.drupal.org/files/issues/2019-05-02/2663316-70.patch",
+                "Allow media items to be edited in a modal when using the field widget":"https://www.drupal.org/files/issues/2019-05-06/2985168-11.patch",
+                "Nesting media references in paragraphs using EXPERIMENTAL widget breaks media library": "https://www.drupal.org/files/issues/2019-05-16/drupal-media-library-paragraphs-3003150-38-8.x.patch"
+            },
+            "drupal/admin_toolbar": {
+                "Accessibility: Admin Toolbar Search element is not accessible": "https://www.drupal.org/files/issues/2019-06-17/admin-toolbar-search-aria-label-3062148-4.patch"
+            },
+            "drupal/inline_responsive_images": {
+                "Remove ! from t() function": "https://www.drupal.org/files/issues/2019-04-25/3050781-1.patch"
+            },
+            "bower-asset/colorbox": {
+                "Aria labels missing from hidden colorbox modal buttons": "patches/colorbox_add_aria_labels.patch"
+            },
+            "drupal/taxonomy_manager": {
+                "Add search feature to taxonomy admin form [2906768]": "https://www.drupal.org/files/issues/2018-09-26/add_search_feature-2906768-18.patch",
+                "Patch taxonomy_manager for more granular permissions":"patches/taxonomy_manager.patch"
+            },
+            "drupal/entity_embed": {
+                "Array to string conversion for Media Image [3069448]": "https://www.drupal.org/files/issues/2019-07-22/entity-embed-array-to-string-error-3069448-2.patch"
+            },
+            "drupal/classy_paragraphs": {
+                "https://www.drupal.org/node/2830403": "https://www.drupal.org/files/issues/choose_and_order-2830403-20.patch"
+            }
+        }
+    }
+}
