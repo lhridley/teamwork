@@ -1,0 +1,14 @@
+uuid: 24d62311-273b-46fb-a231-5389dffb420f
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.company_manager
+  module:
+    - user
+id: user_add_role_action.company_manager
+label: 'Add the Company Manager role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: company_manager

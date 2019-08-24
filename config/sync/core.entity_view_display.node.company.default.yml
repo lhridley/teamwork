@@ -1,0 +1,25 @@
+uuid: e5b03071-a446-46c9-93cf-00fd86784b55
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.company
+  module:
+    - field_layout
+    - layout_discovery
+    - user
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
+id: node.company.default
+targetEntityType: node
+bundle: company
+mode: default
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

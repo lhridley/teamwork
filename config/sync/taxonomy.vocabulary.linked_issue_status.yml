@@ -1,0 +1,8 @@
+uuid: fee4a5ff-fee4-45d7-a011-4d387231ae2c
+langcode: en
+status: true
+dependencies: {  }
+name: 'Linked Issue Status'
+vid: linked_issue_status
+description: ''
+weight: 0

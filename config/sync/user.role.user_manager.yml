@@ -1,0 +1,10 @@
+uuid: 2735e762-18e3-453f-a03d-a92ae70fcd95
+langcode: en
+status: true
+dependencies: {  }
+id: user_manager
+label: 'User Manager'
+weight: -7
+is_admin: null
+permissions:
+  - 'administer users'

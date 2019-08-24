@@ -1,0 +1,8 @@
+uuid: bb100da8-ecbc-4e8b-a53f-7511ed7f2d23
+langcode: en
+status: true
+dependencies: {  }
+name: 'Issue Type'
+vid: issue_type
+description: ''
+weight: 0

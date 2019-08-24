@@ -1,0 +1,28 @@
+uuid: 5607a25a-c3da-4d98-b47c-d1effd5e3cdd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_team_member
+    - paragraphs.paragraphs_type.team_members
+id: paragraph.team_members.field_team_member
+field_name: field_team_member
+entity_type: paragraph
+bundle: team_members
+label: 'Team Member'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    include_anonymous: true
+    filter:
+      type: _none
+    target_bundles: null
+    sort:
+      field: _none
+    auto_create: false
+field_type: entity_reference

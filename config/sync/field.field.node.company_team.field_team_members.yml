@@ -1,0 +1,34 @@
+uuid: 3580b8b4-07b4-48ab-9ee9-662ddbc2c50c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_team_members
+    - node.type.company_team
+    - paragraphs.paragraphs_type.team_members
+  module:
+    - entity_reference_revisions
+id: node.company_team.field_team_members
+field_name: field_team_members
+entity_type: node
+bundle: company_team
+label: 'Team Members'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      team_members: team_members
+    target_bundles_drag_drop:
+      team_members:
+        enabled: true
+        weight: 3
+      from_library:
+        weight: 4
+        enabled: false
+field_type: entity_reference_revisions

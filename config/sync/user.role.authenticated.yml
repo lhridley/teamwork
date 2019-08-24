@@ -1,0 +1,22 @@
+uuid: 4ba8730e-a5d4-4174-afd2-a90571b9c8ad
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: btW6TFHajhy7Eo6YUvdFiPh4TcPggo8GBXYctjV6zag
+id: authenticated
+label: 'Authenticated user'
+weight: -9
+is_admin: false
+permissions:
+  - 'access comments'
+  - 'access content'
+  - 'access shortcuts'
+  - 'access site-wide contact form'
+  - 'post comments'
+  - 'search content'
+  - 'select account cancellation method'
+  - 'skip comment approval'
+  - 'use text format basic_html'
+  - 'view media'
+  - 'view own unpublished content'
