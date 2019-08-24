@@ -1,0 +1,12 @@
+name: Team Work
+description: Team Work, Project Management with Drupal
+package: Team Work
+
+dependencies:
+  - drupal:taxonomy
+  - drupal:email_registration
+
+php: 7.3
+
+type: module
+core: 8.x
