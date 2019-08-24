@@ -1,0 +1,17 @@
+uuid: df6ec9e3-170e-4d2a-803f-7f554637b06b
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: YNZKtj1aU_JY4mggRNhlMPzame_NPf--u-FRb0FN7og
+id: company_manager
+label: 'Company Manager'
+weight: 5
+is_admin: null
+permissions:
+  - 'create company content'
+  - 'edit any company content'
+  - 'edit own company content'
+  - 'use company_management transition archive'
+  - 'use company_management transition publish'
+  - 'view company revisions'

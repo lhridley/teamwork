@@ -1,0 +1,14 @@
+uuid: c0e89d54-e074-4d5d-b705-3126dd96ee43
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.company_manager
+  module:
+    - user
+id: user_remove_role_action.company_manager
+label: 'Remove the Company Manager role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: company_manager

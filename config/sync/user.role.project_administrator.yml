@@ -1,0 +1,11 @@
+uuid: ff857020-c55a-416d-8a44-84004b878755
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: IcCPUoxELhUOcwDMWcOkeASxSNkAhvrgTLQr8547IG8
+id: project_administrator
+label: 'Project Administrator'
+weight: 3
+is_admin: null
+permissions: {  }
