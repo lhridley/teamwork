@@ -3,7 +3,7 @@ status: true
 dependencies: {  }
 id: company_manager
 label: 'Company Manager'
-weight: -6
+weight: 5
 is_admin: null
 permissions:
   - 'create company content'

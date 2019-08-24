@@ -1,9 +1,0 @@
-uuid: 25992af1-bcd1-4ad9-a316-63896b76b89b
-langcode: en
-status: true
-dependencies: {  }
-id: project_administrator
-label: 'Project Administrator'
-weight: -8
-is_admin: null
-permissions: {  }

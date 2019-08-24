@@ -1,8 +1,0 @@
-uuid: 4607a589-3ec4-46f1-aad4-4de1c2dc0eef
-langcode: en
-status: true
-dependencies: {  }
-name: 'Issue Priority'
-vid: issue_priority
-description: ''
-weight: 0

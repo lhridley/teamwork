@@ -1,10 +1,8 @@
-uuid: 69bc6b6f-b24d-4c05-8de5-926e8e87a379
+uuid: 36465088-f369-49e2-8fbe-a25e2c2ef682
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.user.user.field_user_first_name
-    - field.field.user.user.field_user_surname
     - field.field.user.user.user_picture
     - image.style.thumbnail
   module:
@@ -23,22 +21,6 @@ targetEntityType: user
 bundle: user
 mode: default
 content:
-  field_user_first_name:
-    weight: 6
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-    region: content
-  field_user_surname:
-    weight: 7
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-    region: content
   member_for:
     weight: 5
     region: content

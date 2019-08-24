@@ -1,13 +1,13 @@
-uuid: 43852097-b1b6-40bc-a98c-0f647734ae08
+uuid: d475b283-daac-4173-97f4-1cba33ef4991
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.user.user.field_user_first_name
-    - field.field.user.user.field_user_surname
     - field.field.user.user.user_picture
+    - image.style.thumbnail
   module:
     - field_layout
+    - image
     - layout_discovery
     - user
 third_party_settings:
@@ -22,39 +22,23 @@ bundle: user
 mode: default
 content:
   account:
-    weight: 2
+    weight: -10
     region: content
-    settings: {  }
-    third_party_settings: {  }
   contact:
     weight: 5
     region: content
-  field_user_first_name:
-    weight: 0
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textfield
-    region: content
-  field_user_surname:
-    weight: 1
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textfield
-    region: content
   language:
-    weight: 3
+    weight: 0
     region: content
-    settings: {  }
-    third_party_settings: {  }
   timezone:
-    weight: 4
+    weight: 6
     region: content
-    settings: {  }
+  user_picture:
+    type: image_image
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
     third_party_settings: {  }
-hidden:
-  path: true
-  user_picture: true
+    weight: -1
+    region: content
+hidden: {  }
