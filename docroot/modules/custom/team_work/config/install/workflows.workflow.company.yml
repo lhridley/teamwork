@@ -3,10 +3,12 @@ status: true
 dependencies:
   config:
     - node.type.company
+    - node.type.company_team
+    - node.type.project_team
   module:
     - content_moderation
 id: company
-label: Company
+label: Company/Company Team/Project Team
 type: content_moderation
 type_settings:
   states:
@@ -41,4 +43,6 @@ type_settings:
   entity_types:
     node:
       - company
+      - company_team
+      - project_team
   default_moderation_state: published
