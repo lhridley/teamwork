@@ -21,7 +21,9 @@ blacklist:
   - user.role.user_manager
 graylist:
   - user.role.administrator
+  - user.role.anonymous
   - weight
+  - permissions
 graylist_dependents: true
 graylist_skip_equal: true
 weight: 0
