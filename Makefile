@@ -124,11 +124,11 @@ fetools: ##@initialize Builds the front end tools inside the fetools container
 
 export-config: ##@drush Export Configuration Manager yaml files
 	@docker-compose exec php $(project_root)/bin/drush $(drush_alias) cex -y
-	#@docker-compose exec php $(project_root)/bin/drush $(drush_alias) csex dev -y
+	@docker-compose exec php $(project_root)/bin/drush $(drush_alias) csex team_work -y
 
 import-config: ##@drush Import Configuration Manager yaml files
 	@docker-compose exec php $(project_root)/bin/drush $(drush_alias) cim vcs -y
-	#@docker-compose exec php $(project_root)/bin/drush $(drush_alias) csim dev -y
+	@docker-compose exec php $(project_root)/bin/drush $(drush_alias) csim team_work -y
 
 composer-install: ##@composer Run Composer Install
 ifdef TRAVIS

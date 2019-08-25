@@ -1,0 +1,15 @@
+uuid: 247cee41-113e-4ddd-8204-95fb36069bfa
+langcode: en
+status: true
+dependencies: {  }
+id: team_work
+label: team_work
+description: 'Configuration for Team Work module'
+folder: ../config/team_work
+module: {  }
+theme: {  }
+blacklist: {  }
+graylist: {  }
+graylist_dependents: true
+graylist_skip_equal: true
+weight: 0
