@@ -1,0 +1,10 @@
+uuid: f65f7411-6d04-41ca-b58b-c8a248225b70
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: IRxuBoa5Oomhm7gbEb8ZE6XEZ7w1QBwRxzWZKxPSFig
+name: 'Issue Status'
+vid: issue_status
+description: ''
+weight: 0

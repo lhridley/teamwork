@@ -1,0 +1,10 @@
+uuid: 3974eabc-94f8-4573-85c4-f13cdf0a6f4f
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: clG2d6DMd7pIj70ukFKJdni6Y4SAEOOEx1FgcFMnAWw
+name: 'Team Roles'
+vid: team_roles
+description: ''
+weight: 0

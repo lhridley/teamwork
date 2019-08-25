@@ -1,0 +1,10 @@
+uuid: 88b24e05-839c-4c31-ac51-d33310d1ddfc
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: P-GhkkDFkb0j9PWuPYBkRtc7qsJctYJMDItGH2F3Rk4
+name: 'Linked Issue Status'
+vid: linked_issue_status
+description: ''
+weight: 0
