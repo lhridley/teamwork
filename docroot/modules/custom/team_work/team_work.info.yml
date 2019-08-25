@@ -5,6 +5,8 @@ package: Team Work
 dependencies:
   - drupal:taxonomy
   - drupal:email_registration
+  - drupal:pathauto
+  - drupal:content_moderation
 
 php: 7.3
 
