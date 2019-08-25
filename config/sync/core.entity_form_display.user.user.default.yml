@@ -3,11 +3,11 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.user.user.field_first_name
+    - field.field.user.user.field_last_name
     - field.field.user.user.user_picture
-    - image.style.thumbnail
   module:
     - field_layout
-    - image
     - layout_discovery
     - user
 third_party_settings:
@@ -22,23 +22,31 @@ bundle: user
 mode: default
 content:
   account:
-    weight: -10
+    weight: 2
     region: content
+    settings: {  }
+    third_party_settings: {  }
   contact:
     weight: 5
     region: content
-  language:
+  field_first_name:
     weight: 0
-    region: content
-  timezone:
-    weight: 6
-    region: content
-  user_picture:
-    type: image_image
     settings:
-      progress_indicator: throbber
-      preview_image_style: thumbnail
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
-    weight: -1
+    type: string_textfield
     region: content
-hidden: {  }
+  field_last_name:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  language: true
+  path: true
+  timezone: true
+  user_picture: true
