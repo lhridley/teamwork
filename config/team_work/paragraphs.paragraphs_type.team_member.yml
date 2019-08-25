@@ -1,0 +1,16 @@
+uuid: d966daa5-782b-4b62-bed8-f5fc1b496452
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs_library
+third_party_settings:
+  paragraphs_library:
+    allow_library_conversion: true
+_core:
+  default_config_hash: 2KOoWTgnHXQsXoznFKVHFlBjs9fjlBPt6VB_3sRH-l8
+id: team_member
+label: 'Team Member'
+icon_uuid: null
+description: 'Team Member'
+behavior_plugins: {  }

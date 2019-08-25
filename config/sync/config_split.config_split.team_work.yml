@@ -10,6 +10,35 @@ module:
   team_work: 0
 theme: {  }
 blacklist:
+  - core.base_field_override.node.company.title
+  - core.base_field_override.node.company_team.title
+  - core.entity_form_display.node.company.default
+  - core.entity_form_display.node.company_team.default
+  - core.entity_form_display.paragraph.team_member.default
+  - core.entity_view_display.node.company.default
+  - core.entity_view_display.node.company.teaser
+  - core.entity_view_display.node.company_team.default
+  - core.entity_view_display.node.company_team.teaser
+  - core.entity_view_display.paragraph.team_member.default
+  - field.field.node.company_team.field_company
+  - field.field.node.company_team.field_team_member
+  - field.field.paragraph.team_member.field_role
+  - field.field.paragraph.team_member.field_team_member
+  - field.storage.node.field_company
+  - field.storage.node.field_team_member
+  - field.storage.paragraph.field_role
+  - field.storage.paragraph.field_team_member
+  - node.type.company
+  - node.type.company_team
+  - paragraphs.paragraphs_type.team_member
+  - pathauto.pattern.company
+  - pathauto.pattern.company_team
+  - system.action.user_add_role_action.company_manager
+  - system.action.user_add_role_action.project_administrator
+  - system.action.user_add_role_action.user_manager
+  - system.action.user_remove_role_action.company_manager
+  - system.action.user_remove_role_action.project_administrator
+  - system.action.user_remove_role_action.user_manager
   - taxonomy.vocabulary.issue_priority
   - taxonomy.vocabulary.issue_status
   - taxonomy.vocabulary.issue_type
@@ -19,6 +48,7 @@ blacklist:
   - user.role.company_manager
   - user.role.project_administrator
   - user.role.user_manager
+  - workflows.workflow.company
 graylist:
   - user.role.administrator
   - user.role.anonymous

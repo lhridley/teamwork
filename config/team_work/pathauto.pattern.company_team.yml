@@ -1,0 +1,24 @@
+uuid: d90e1827-8fc3-4be6-8dbc-b60edde4b94f
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: DHwykB29t98hfROF9GDDns2bDRJ_jrCsIwgLJJuUP3o
+id: company_team
+label: 'Company Team'
+type: 'canonical_entities:node'
+pattern: 'company/[node:field_company:target_id]/[node:content-type]/[node:title]'
+selection_criteria:
+  649345ab-1b7b-42c1-8c1a-f336de3d8c66:
+    id: node_type
+    bundles:
+      company_team: company_team
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 649345ab-1b7b-42c1-8c1a-f336de3d8c66
+selection_logic: and
+weight: -5
+relationships: {  }
