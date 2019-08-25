@@ -1,0 +1,8 @@
+uuid: 300ba31a-2d34-491f-8d24-6c1128bee7fc
+langcode: en
+status: true
+dependencies: {  }
+name: 'Project Keys'
+vid: project_keys
+description: 'Project Keys (unique)'
+weight: 0
