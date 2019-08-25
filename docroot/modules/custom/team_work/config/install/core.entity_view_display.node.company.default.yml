@@ -1,4 +1,3 @@
-uuid: 3f5fb586-376c-490e-b5e8-acd6c690c871
 langcode: en
 status: true
 dependencies:
@@ -13,8 +12,6 @@ third_party_settings:
   field_layout:
     id: layout_onecol
     settings: {  }
-_core:
-  default_config_hash: rpxDDzRkOrFVVpt6i95eazmEmUZRelZDrwryOHVqbss
 id: node.company.default
 targetEntityType: node
 bundle: company

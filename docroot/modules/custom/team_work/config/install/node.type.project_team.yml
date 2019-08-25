@@ -1,4 +1,3 @@
-uuid: a30c42c2-2669-4a2b-8102-7f2120379976
 langcode: en
 status: true
 dependencies:
@@ -24,7 +23,7 @@ third_party_settings:
     unpublish_revision: false
 name: 'Project Team'
 type: project_team
-description: ''
+description: 'Project Teams are groups of users for the primary company that make up a team. Companies can have more than one Project Team, and users can belong to more than one team. Project Teams are associated with Projects.'
 help: ''
 new_revision: true
 preview_mode: 1
