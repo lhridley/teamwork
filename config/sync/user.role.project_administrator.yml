@@ -1,0 +1,11 @@
+uuid: d75149ab-12c9-486c-802b-d36727dc7da6
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: IcCPUoxELhUOcwDMWcOkeASxSNkAhvrgTLQr8547IG8
+id: project_administrator
+label: 'Project Administrator'
+weight: 3
+is_admin: null
+permissions: {  }

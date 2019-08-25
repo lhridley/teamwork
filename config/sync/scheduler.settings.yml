@@ -14,7 +14,7 @@ default_time: '00:00:00'
 default_unpublish_enable: false
 default_unpublish_required: false
 default_unpublish_revision: false
-lightweight_cron_access_key: fa9044319140a0f647c8
+lightweight_cron_access_key: 57e6d45e569305b7e887
 log: true
 time_letters: hHgGisaA
 time_only_format: 'H:i:s'

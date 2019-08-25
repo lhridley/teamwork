@@ -1,11 +1,10 @@
-uuid: a74f2301-3d5b-41d7-aa23-685027ff1ba9
+uuid: c1c47bd5-43b1-41a0-840b-174341032659
 langcode: en
 status: true
 dependencies:
   config:
     - node.type.project_team
   module:
-    - content_moderation
     - field_layout
     - layout_discovery
     - path
@@ -14,6 +13,8 @@ third_party_settings:
   field_layout:
     id: layout_onecol
     settings: {  }
+_core:
+  default_config_hash: FvLQZRpOh2r8YsujXPOBnAncsIzNGa0CnlHM3JgwAVM
 id: node.project_team.default
 targetEntityType: node
 bundle: project_team

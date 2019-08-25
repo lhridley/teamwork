@@ -1,4 +1,4 @@
-uuid: cecadad0-9de9-4aa5-9cd3-7301029a1080
+uuid: 72b1e677-a2f2-491f-a4e7-680f9825ca85
 langcode: en
 status: true
 dependencies:
@@ -12,6 +12,8 @@ third_party_settings:
   field_layout:
     id: layout_onecol
     settings: {  }
+_core:
+  default_config_hash: PMowhCj_6ijGJF1Rqtbnm86_NTyFrtC6qtIFNXJu9Mo
 id: node.project_team.default
 targetEntityType: node
 bundle: project_team

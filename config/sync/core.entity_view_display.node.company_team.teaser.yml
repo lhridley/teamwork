@@ -1,0 +1,32 @@
+uuid: f22254fd-7c57-4e7f-a58a-383ed1d0b96e
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.company_team.field_company
+    - field.field.node.company_team.field_team_member
+    - node.type.company_team
+  module:
+    - field_layout
+    - layout_discovery
+    - user
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
+_core:
+  default_config_hash: BnEeMy57NGo5Wh6Uj0S3bXotiKxrHIUApmwV3y3-gr8
+id: node.company_team.teaser
+targetEntityType: node
+bundle: company_team
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_company: true
+  field_team_member: true

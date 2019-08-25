@@ -1,0 +1,10 @@
+uuid: a432a1b2-d1d8-401c-a42b-6aa1fe51cd63
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 597mCf6xDJRT2KVSUwm4pX768v7XeYZAOYw3k59CY2s
+name: Sprint
+vid: sprint
+description: ''
+weight: 0

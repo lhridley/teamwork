@@ -1,9 +1,11 @@
-uuid: 2bbe4e38-1ee7-4ea0-9729-cacd94b04522
+uuid: c45cc1b7-a9e8-4fce-9eba-cc2f9f510f49
 langcode: en
 status: true
 dependencies:
   config:
     - node.type.project_team
+_core:
+  default_config_hash: cS4Wj4Ub_Dt7YCniXCJbRUO3s49H1ePusmUu3bJfnXc
 id: node.project_team.title
 field_name: title
 entity_type: node

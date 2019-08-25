@@ -1,0 +1,12 @@
+uuid: 45c37082-7e09-44af-a141-0eb03a4bb39d
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: Pl7lJQs_IPY_qEAVCQn--gMm5R8wU369KktHoaIuHJQ
+id: user_manager
+label: 'User Manager'
+weight: 4
+is_admin: null
+permissions:
+  - 'administer users'

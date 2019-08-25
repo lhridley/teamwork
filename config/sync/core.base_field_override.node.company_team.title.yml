@@ -1,0 +1,20 @@
+uuid: 2de89b7f-d3e7-4255-87b6-4c993898079d
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.company_team
+_core:
+  default_config_hash: Yv_8Kcd65CFZcp2YniX8Z_PmgQ9VNy6Klxb8FHG9lEs
+id: node.company_team.title
+field_name: title
+entity_type: node
+bundle: company_team
+label: 'Team Name'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

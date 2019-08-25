@@ -1,4 +1,4 @@
-uuid: d0ef26ba-a596-4ebc-9cee-851577a4d4dc
+uuid: 939fe5f3-c790-4f09-941d-635a2cddc9f1
 langcode: en
 status: true
 dependencies: {  }
@@ -15,4 +15,3 @@ effects:
       width: 50
       height: 50
       anchor: center-center
-pipeline: __default__

@@ -1,0 +1,10 @@
+uuid: 99a01f13-6292-453b-9dbf-b5b317c86699
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: xy4LbCWK5hFeM7ggrvMqb7ARZmRTzYjX5hkw4KcZkAw
+name: 'Issue Priority'
+vid: issue_priority
+description: ''
+weight: 0

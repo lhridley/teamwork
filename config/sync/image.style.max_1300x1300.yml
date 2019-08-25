@@ -1,4 +1,4 @@
-uuid: 6b9fb214-2c00-4c2d-a483-e389e1e03cd5
+uuid: aab400e2-04cc-49aa-8eed-d49373595d4e
 langcode: en
 status: true
 dependencies:
@@ -18,4 +18,3 @@ effects:
       width: 1300
       height: 1300
       upscale: false
-pipeline: __default__

@@ -1,0 +1,47 @@
+uuid: 53dec2f2-a152-4da9-a0bb-1de8effe251c
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.company
+  module:
+    - content_moderation
+_core:
+  default_config_hash: fPJzLrQPcWUUvkjh9gYK7m--uscS0PVODY71iRnDclg
+id: company
+label: Company
+type: content_moderation
+type_settings:
+  states:
+    archived:
+      published: false
+      default_revision: false
+      label: Archived
+      weight: 2
+    draft:
+      label: Draft
+      published: false
+      default_revision: false
+      weight: 0
+    published:
+      label: Published
+      published: true
+      default_revision: true
+      weight: 1
+  transitions:
+    archived:
+      label: Archived
+      from:
+        - published
+      to: archived
+      weight: 2
+    publish:
+      label: Publish
+      to: published
+      weight: 1
+      from:
+        - published
+  entity_types:
+    node:
+      - company
+  default_moderation_state: published

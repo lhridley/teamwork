@@ -1,0 +1,25 @@
+uuid: b226563d-fba9-4e52-aee9-8fa9efb9364e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_primary_team
+    - node.type.company
+_core:
+  default_config_hash: wAhYrgCyE6_J76ZQi2PF3pWGUkEIe7DIxtUSzHgHiEk
+id: node.company.field_primary_team
+field_name: field_primary_team
+entity_type: node
+bundle: company
+label: 'Primary Team'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean
