@@ -7,6 +7,8 @@
 
 use Drupal\taxonomy\Entity\Vocabulary;
 use Drupal\user\Entity\Role;
+use Drupal\field\Entity\FieldStorageConfig;
+use Drupal\pathauto\Entity\PathautoPattern;
 
 /**
  * Implements hook_install().
@@ -41,19 +43,115 @@ function team_work_install() {
   $role = Role::load('administrator');
   $role->setWeight(100);
   $role->save();
-  
+
   // Install vocabulary terms.
   _team_work_create_issue_type_vocabulary();
   _team_work_create_issue_priority_vocabulary();
   _team_work_create_linked_issue_status_vocabulary();
   _team_work_create_team_roles_vocabulary();
   _team_work_create_issue_status_vocabulary();
+
+  // Add new fields to user.
+  _team_work_add_new_user_fields();
 }
 
 /**
  * Implements hook_uninstall().
  */
 function team_work_uninstall() {
+
+  // Disable the added user fields, and restore user_picture field.
+  _team_work_remove_user_fields();
+
+  $field = FieldStorageConfig::loadByName('node', 'field_team_member');
+  if ($field) {
+    $field->delete();
+  }
+
+  $field = FieldStorageConfig::loadByName('paragraph', 'field_team_member');
+  if ($field) {
+    $field->delete();
+  }
+
+  $field = FieldStorageConfig::loadByName('paragraph', 'field_role');
+  if ($field) {
+    $field->delete();
+  }
+
+  $entity = \Drupal::entityTypeManager()
+    ->getStorage('paragraphs_type')
+    ->load('team_member');
+  if ($entity) {
+    $entity->delete();
+  }
+
+  $field = FieldStorageConfig::loadByName('node', 'field_project_team');
+  if ($field) {
+    $field->delete();
+  }
+
+  $entity = \Drupal::entityTypeManager()
+    ->getStorage('node_type')
+    ->load('project_team');
+  if ($entity) {
+    $entity->delete();
+  }
+
+  $field = FieldStorageConfig::loadByName('node', 'field_project_key');
+  if ($field) {
+    $field->delete();
+  }
+
+  $field = FieldStorageConfig::loadByName('node', 'field_project_team');
+  if ($field) {
+    $field->delete();
+  }
+
+  $field = FieldStorageConfig::loadByName('node', 'field_project_lead');
+  if ($field) {
+    $field->delete();
+  }
+
+  $field = FieldStorageConfig::loadByName('node', 'field_default_assignee');
+  if ($field) {
+    $field->delete();
+  }
+
+  $field = FieldStorageConfig::loadByName('node', 'field_company_team');
+  if ($field) {
+    $field->delete();
+  }
+
+  $field = FieldStorageConfig::loadByName('node', 'field_company');
+  if ($field) {
+    $field->delete();
+  }
+
+  $field = FieldStorageConfig::loadByName('node', 'field_primary_team');
+  if ($field) {
+    $field->delete();
+  }
+
+  $entity = \Drupal::entityTypeManager()
+    ->getStorage('node_type')
+    ->load('project');
+  if ($entity) {
+    $entity->delete();
+  }
+
+  $entity = \Drupal::entityTypeManager()
+    ->getStorage('node_type')
+    ->load('company_team');
+  if ($entity) {
+    $entity->delete();
+  }
+
+  $entity = \Drupal::entityTypeManager()
+    ->getStorage('node_type')
+    ->load('company');
+  if ($entity) {
+    $entity->delete();
+  }
   // Delete Team Work Vocabularies.
   $vocabs = [
     'issue_type',
@@ -62,9 +160,29 @@ function team_work_uninstall() {
     'issue_status',
     'team_roles',
     'sprint',
+    'project_keys',
   ];
   foreach ($vocabs as $vocab) {
-    Vocabulary::load($vocab)->delete();
+    $voc = Vocabulary::load($vocab);
+    if (!is_null($voc)) {
+      $voc->delete();
+    }
+  }
+
+  if ($alias_entity = PathautoPattern::load('company')) {
+    $alias_entity->delete();
+  }
+
+  if ($alias_entity = PathautoPattern::load('project')) {
+    $alias_entity->delete();
+  }
+
+  if ($alias_entity = PathautoPattern::load('project_team')) {
+    $alias_entity->delete();
+  }
+
+  if ($alias_entity = PathautoPattern::load('company_team')) {
+    $alias_entity->delete();
   }
 
   // Delete Team Work Roles.
@@ -74,8 +192,19 @@ function team_work_uninstall() {
     'user_manager',
   ];
   foreach ($roles as $role) {
-    Role::load($role)->delete();
+    $role_to_delete = Role::load($role);
+    if (!is_null($role_to_delete)) {
+      $role_to_delete->delete();
+    }
   }
+
+  $entity = \Drupal::entityTypeManager()
+    ->getStorage('workflow')
+    ->load('company');
+  if (!is_null($entity)) {
+    $entity->delete();
+  }
+
 }
 
 /**
@@ -167,4 +296,222 @@ function _team_work_create_issue_status_vocabulary() {
     'Closed',
   ];
   _team_work_install_vocabulary_terms($vocab, $terms, TRUE);
+}
+
+/**
+ * Helper function to add new fields to user entity.
+ */
+function _team_work_add_new_user_fields() {
+
+  $field = \Drupal::entityTypeManager()
+    ->getStorage('entity_view_display')
+    ->load('user.user.default')
+    ->getComponent('field_first_name');
+
+  if (!is_null($field)) {
+    \Drupal::entityTypeManager()
+      ->getStorage('entity_view_display')
+      ->load('user.user.default')
+      ->setComponent('field_first_name', [
+        'weight' => 0,
+        'label' => 'above',
+        'type' => 'string',
+        'region' => 'content',
+        'settings' => [
+          'link_to_entity' => FALSE,
+        ],
+      ])->save();
+  }
+
+  $field = \Drupal::entityTypeManager()
+    ->getStorage('entity_view_display')
+    ->load('user.user.default')
+    ->getComponent('field_last_name');
+
+  if (!is_null($field)) {
+    \Drupal::entityTypeManager()
+      ->getStorage('entity_view_display')
+      ->load('user.user.default')
+      ->setComponent('field_last_name', [
+        'weight' => 1,
+        'label' => 'above',
+        'type' => 'string',
+        'region' => 'content',
+        'settings' => [
+          'link_to_entity' => FALSE,
+        ],
+      ])->save();
+  }
+
+  $field = \Drupal::entityTypeManager()
+    ->getStorage('entity_view_display')
+    ->load('user.user.default')
+    ->getComponent('user_picture');
+
+  if (!is_null($field)) {
+    \Drupal::entityTypeManager()
+      ->getStorage('entity_view_display')
+      ->load('user.user.default')
+      ->removeComponent('user_picture')->save();
+  }
+
+  $field = \Drupal::entityTypeManager()
+    ->getStorage('entity_form_display')
+    ->load('user.user.default')
+    ->getComponent('field_first_name');
+
+  if (!is_null($field)) {
+    \Drupal::entityTypeManager()
+      ->getStorage('entity_form_display')
+      ->load('user.user.default')
+      ->setComponent('field_first_name', [
+        'weight' => 0,
+        'label' => 'above',
+        'type' => 'string_textfield',
+        'region' => 'content',
+        'settings' => [
+          'size' => 60,
+          'placeholder' => '',
+        ],
+      ])->save();
+  }
+
+  $field = \Drupal::entityTypeManager()
+    ->getStorage('entity_form_display')
+    ->load('user.user.default')
+    ->getComponent('field_last_name');
+
+  if (!is_null($field)) {
+    \Drupal::entityTypeManager()
+      ->getStorage('entity_form_display')
+      ->load('user.user.default')
+      ->setComponent('field_last_name', [
+        'weight' => 1,
+        'label' => 'above',
+        'type' => 'string_textfield',
+        'region' => 'content',
+        'settings' => [
+          'size' => 60,
+          'placeholder' => '',
+        ],
+      ])->save();
+  }
+
+  $field = \Drupal::entityTypeManager()
+    ->getStorage('entity_form_display')
+    ->load('user.user.default')
+    ->getComponent('user_picture');
+
+  if (!is_null($field)) {
+    \Drupal::entityTypeManager()
+      ->getStorage('entity_form_display')
+      ->load('user.user.default')
+      ->removeComponent('user_picture')->save();
+  }
+}
+
+/**
+ * Helper function to renove new fields to user entity.
+ */
+function _team_work_remove_user_fields() {
+
+  $field = \Drupal::entityTypeManager()
+    ->getStorage('entity_view_display')
+    ->load('user.user.default')
+    ->getComponent('field_first_name');
+
+  if (!is_null($field)) {
+    \Drupal::entityTypeManager()
+      ->getStorage('entity_view_display')
+      ->load('user.user.default')
+      ->removeComponent('field_first_name')->save();
+  }
+
+  $field = \Drupal::entityTypeManager()
+    ->getStorage('entity_view_display')
+    ->load('user.user.default')
+    ->getComponent('field_last_name');
+
+  if (!is_null($field)) {
+    \Drupal::entityTypeManager()
+      ->getStorage('entity_view_display')
+      ->load('user.user.default')
+      ->removeComponent('field_last_name')->save();
+  }
+
+  $field = \Drupal::entityTypeManager()
+    ->getStorage('entity_form_display')
+    ->load('user.user.default')
+    ->getComponent('field_first_name');
+
+  if (!is_null($field)) {
+    \Drupal::entityTypeManager()
+      ->getStorage('entity_form_display')
+      ->load('user.user.default')
+      ->removeComponent('field_first_name')->save();
+  }
+
+  $field = \Drupal::entityTypeManager()
+    ->getStorage('entity_form_display')
+    ->load('user.user.default')
+    ->getComponent('field_last_name');
+
+  if (!is_null($field)) {
+    \Drupal::entityTypeManager()
+      ->getStorage('entity_form_display')
+      ->load('user.user.default')
+      ->removeComponent('field_last_name')->save();
+  }
+
+  $field = \Drupal::entityTypeManager()
+    ->getStorage('entity_form_display')
+    ->load('user.user.default')
+    ->getComponent('user_picture');
+
+  if (!is_null($field)) {
+    \Drupal::entityTypeManager()
+      ->getStorage('entity_form_display')
+      ->load('user.user.default')
+      ->setComponent('user_picture', [
+        'weight' => -1,
+        'type' => 'image_image',
+        'region' => 'content',
+        'settings' => [
+          'progress_indicator' => 'throbber',
+          'preview_image_style' => 'thumbnail',
+        ],
+      ])->save();
+  }
+
+  $field = \Drupal::entityTypeManager()
+    ->getStorage('entity_view_display')
+    ->load('user.user.default')
+    ->getComponent('user_picture');
+
+  if (!is_null($field)) {
+    \Drupal::entityTypeManager()
+      ->getStorage('entity_view_display')
+      ->load('user.user.default')
+      ->setComponent('user_picture', [
+        'weight' => 0,
+        'type' => 'image',
+        'region' => 'content',
+        'label' => 'hidden',
+        'settings' => [
+          'image_link' => 'content',
+          'image_style' => 'thumbnail',
+        ],
+      ])->save();
+  }
+
+  $field = FieldStorageConfig::loadByName('user', 'field_first_name');
+  if ($field) {
+    $field->delete();
+  }
+
+  $field = FieldStorageConfig::loadByName('user', 'field_last_name');
+  if ($field) {
+    $field->delete();
+  }
+
 }
