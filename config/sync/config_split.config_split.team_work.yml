@@ -6,10 +6,22 @@ id: team_work
 label: team_work
 description: 'Configuration for Team Work module'
 folder: ../config/team_work
-module: {  }
+module:
+  team_work: 0
 theme: {  }
-blacklist: {  }
-graylist: {  }
+blacklist:
+  - taxonomy.vocabulary.issue_priority
+  - taxonomy.vocabulary.issue_status
+  - taxonomy.vocabulary.issue_type
+  - taxonomy.vocabulary.linked_issue_status
+  - taxonomy.vocabulary.sprint
+  - taxonomy.vocabulary.team_roles
+  - user.role.company_manager
+  - user.role.project_administrator
+  - user.role.user_manager
+graylist:
+  - user.role.administrator
+  - weight
 graylist_dependents: true
 graylist_skip_equal: true
 weight: 0

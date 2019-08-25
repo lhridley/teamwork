@@ -18,3 +18,4 @@ effects:
       width: 2600
       height: 2600
       upscale: false
+pipeline: __default__
