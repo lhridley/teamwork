@@ -1,0 +1,23 @@
+uuid: 8b2b111b-7e21-4c3f-98a1-c8755cae8382
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_primary_team
+    - node.type.company
+id: node.company.field_primary_team
+field_name: field_primary_team
+entity_type: node
+bundle: company
+label: 'Primary Team'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

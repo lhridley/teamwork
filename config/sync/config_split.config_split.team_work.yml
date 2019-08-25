@@ -20,11 +20,13 @@ blacklist:
   - core.entity_view_display.node.company_team.default
   - core.entity_view_display.node.company_team.teaser
   - core.entity_view_display.paragraph.team_member.default
+  - field.field.node.company.field_primary_team
   - field.field.node.company_team.field_company
   - field.field.node.company_team.field_team_member
   - field.field.paragraph.team_member.field_role
   - field.field.paragraph.team_member.field_team_member
   - field.storage.node.field_company
+  - field.storage.node.field_primary_team
   - field.storage.node.field_team_member
   - field.storage.paragraph.field_role
   - field.storage.paragraph.field_team_member
