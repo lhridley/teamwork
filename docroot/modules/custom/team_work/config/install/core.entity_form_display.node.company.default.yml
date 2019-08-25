@@ -1,9 +1,13 @@
+uuid: e534a2c2-57ff-4e42-913e-e9bb96d95de7
 langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.company.field_primary_team
     - node.type.company
+    - workflows.workflow.company
   module:
+    - content_moderation
     - field_layout
     - layout_discovery
     - path
@@ -12,6 +16,8 @@ third_party_settings:
   field_layout:
     id: layout_onecol
     settings: {  }
+_core:
+  default_config_hash: RCLQaQGgezkxgjcgNgfm9ZIBkS3m2xOrkfgXJQThWEc
 id: node.company.default
 targetEntityType: node
 bundle: company
@@ -22,6 +28,19 @@ content:
     weight: 10
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_primary_team:
+    weight: 121
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  moderation_state:
+    type: moderation_state_default
+    weight: 100
+    settings: {  }
+    region: content
     third_party_settings: {  }
   path:
     type: path
