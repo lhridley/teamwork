@@ -37,6 +37,11 @@ function team_work_install() {
     $role->revokePermission($perm);
   }
 
+  // Set weight of administrator role to 100.
+  $role = Role::load('administrator');
+  $role->setWeight(100);
+  $role->save();
+  
   // Install vocabulary terms.
   _team_work_create_issue_type_vocabulary();
   _team_work_create_issue_priority_vocabulary();
