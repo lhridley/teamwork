@@ -27,7 +27,7 @@
         "bower-asset/blazy": "^1.8",
         "bower-asset/bootstrap": "^4.3",
         "drupal/address": "^1.7",
-        "drupal/admin_toolbar_tools": "^1.26",
+        "drupal/admin_toolbar": "^1.26",
         "drupal/bg_image_formatter": "^1.6",
         "drupal/blazy": "^2.0@RC",
         "drupal/block_exclude_pages": "^1.3",
@@ -37,16 +37,21 @@
         "drupal/config_split": "^1.4",
         "drupal/console": "^1.0.2",
         "drupal/core": "^8.7.0",
+        "drupal/ctools": "^3.2",
         "drupal/devel": "~2.0",
         "drupal/devel_entity_updates": "^1.0",
         "drupal/diff": "^1.0@RC",
         "drupal/easy_breadcrumb": "^1.12",
+        "drupal/email_registration": "^1.0",
         "drupal/embed": "^1.0",
         "drupal/entity": "^1.0@alpha",
         "drupal/entity_browser": "^2.0",
         "drupal/entity_embed": "^1.0",
+        "drupal/entity_reference_revisions": "^1.6",
+        "drupal/entity_usage": "^2.0",
         "drupal/environment_indicator": "^3.6",
         "drupal/facets": "^1.3",
+        "drupal/field_permissions": "^1.0",
         "drupal/field_validation": "^1.0@alpha",
         "drupal/focal_point": "^1.0@beta",
         "drupal/gesso": "^3.0",
@@ -55,15 +60,17 @@
         "drupal/inline_responsive_images": "^2.1",
         "drupal/linkit": "^4.3",
         "drupal/menu_link_attributes": "^1.0",
-        "drupal/metatag": "^1.8",
         "drupal/module_filter": "^3.1",
+        "drupal/paragraphs": "^1.9",
+        "drupal/pathauto": "^1.4",
         "drupal/redirect": "^1.3",
+        "drupal/scheduler": "^1.1",
         "drupal/search_api_attachments": "^1.0",
         "drupal/search_api_solr": "^1.0",
         "drupal/smart_trim": "^1.1",
         "drupal/styleguide": "^1.0@alpha",
         "drupal/telephone_formatter": "^1.0",
-        "drupal/team_work": "1.x-dev",
+        "drupal/token": "^1.5",
         "drupal/video_embed_field": "^2.0",
         "drupal/views_contextual_filters_or": "^1.1",
         "drupal/views_extras": "^1.1",
@@ -173,18 +180,8 @@
             "drupal/inline_responsive_images": {
                 "Remove ! from t() function": "https://www.drupal.org/files/issues/2019-04-25/3050781-1.patch"
             },
-            "bower-asset/colorbox": {
-                "Aria labels missing from hidden colorbox modal buttons": "patches/colorbox_add_aria_labels.patch"
-            },
-            "drupal/taxonomy_manager": {
-                "Add search feature to taxonomy admin form [2906768]": "https://www.drupal.org/files/issues/2018-09-26/add_search_feature-2906768-18.patch",
-                "Patch taxonomy_manager for more granular permissions":"patches/taxonomy_manager.patch"
-            },
             "drupal/entity_embed": {
                 "Array to string conversion for Media Image [3069448]": "https://www.drupal.org/files/issues/2019-07-22/entity-embed-array-to-string-error-3069448-2.patch"
-            },
-            "drupal/classy_paragraphs": {
-                "https://www.drupal.org/node/2830403": "https://www.drupal.org/files/issues/choose_and_order-2830403-20.patch"
             }
         }
     }
