@@ -72,7 +72,7 @@ wcag2AA-url: ##@testing Running Pa11y-CI tool for wcag2AA compliance against a s
 	@docker-compose run pa11y /bin/bash -c "pa11y-ci $(filter-out $@,$(MAKECMDGOALS))"
 
 phpunit:  ##@testing Running Drupal Unit tests
-	@docker-compose exec -T php $(project_root)/bin/phpunit -c $(project_root)/phpunit.xml.dist
+	@docker-compose exec -T php $(project_root)/bin/phpunit -c $(project_root)/phpunit.xml.dist --group=team_work
 
 test:  ##@testing Execute all test suites
 	@make phpcs
@@ -248,17 +248,17 @@ profile-setup: #hidden target to consolidate steps needed in devinit and prodini
 
 initialize-db: #used in conjunction with initialize-site, comment out once a seed db is established and use import-db instead
 	## used when initializing a project, shoudl be replaced with make import-db when a seed db is available to import
-	@docker-compose exec php $(project_root)/bin/drush $(drush_alias) si minimal --db-url=mysql://drupal:drupal@db/drupal --account-name=admin --account-pass=drupaladm1n --site-name=$(SITE_NAME) -y
+	@docker-compose exec php $(project_root)/bin/drush $(drush_alias) si standard --db-url=mysql://drupal:drupal@db/drupal --account-name=admin --account-pass=drupaladm1n --site-name=$(SITE_NAME) -y
 	@docker-compose exec php $(project_root)/bin/drush $(drush_alias) config-set "system.site" uuid "$(uuid)" -y
-	#@docker-compose exec php $(project_root)/bin/drush $(drush_alias) ev '\Drupal::entityManager()->getStorage("shortcut_set")->load("default")->delete();'
-	#@docker-compose exec php $(project_root)/bin/drush $(drush_alias) ev '\Drupal::entityManager()->getStorage("node_type")->load("article")->delete();'
-	#@docker-compose exec php $(project_root)/bin/drush $(drush_alias) ev '\Drupal\taxonomy\Entity\Vocabulary::load("tags")->delete();'
-	#@docker-compose exec php $(project_root)/bin/drush $(drush_alias) pm-uninstall shortcut -y
+	@docker-compose exec php $(project_root)/bin/drush $(drush_alias) ev '\Drupal::entityManager()->getStorage("shortcut_set")->load("default")->delete();'
+	@docker-compose exec php $(project_root)/bin/drush $(drush_alias) ev '\Drupal::entityManager()->getStorage("node_type")->load("article")->delete();'
+	@docker-compose exec php $(project_root)/bin/drush $(drush_alias) ev '\Drupal\taxonomy\Entity\Vocabulary::load("tags")->delete();'
+	@docker-compose exec php $(project_root)/bin/drush $(drush_alias) pm-uninstall shortcut -y
 
 initialize-site: #used in conjunction with initialize-db, comment out once a seed db is established and use import-db instead
-	#@docker-compose exec php $(project_root)/bin/drush $(drush_alias) pm-uninstall comment contact history quickedit -y
-	#@docker-compose exec php $(project_root)/bin/drush $(drush_alias) en address admin_toolbar_tools blazy blazy_ui block_field content_moderation ctools_block ctools_views email_registration inline_responsive_images linkit field_layout field_permissions focal_point ckeditor_uploadimage block_exclude_pages datetime_range telephone_formatter responsive_bg_image_formatter easy_breadcrumb entity entity_embed imageapi_optimize_resmushit media metatag responsive_image module_filter media_library menu_link_attributes environment_indicator environment_indicator_ui entity_reference_revisions telephone diff pathauto redirect scheduler token paragraphs paragraphs_library paragraphs_type_permissions components smart_trim styleguide views_contextual_filters_or -y
-	#@docker-compose exec php $(project_root)/bin/drush $(drush_alias) en team_work -y
+	@docker-compose exec php $(project_root)/bin/drush $(drush_alias) pm-uninstall comment contact history quickedit -y
+	@docker-compose exec php $(project_root)/bin/drush $(drush_alias) en address admin_toolbar_tools blazy blazy_ui block_field content_moderation ctools_block ctools_views email_registration inline_responsive_images linkit field_layout field_permissions focal_point ckeditor_uploadimage block_exclude_pages datetime_range telephone_formatter responsive_bg_image_formatter easy_breadcrumb entity entity_embed imageapi_optimize_resmushit media metatag responsive_image module_filter media_library menu_link_attributes environment_indicator environment_indicator_ui entity_reference_revisions telephone diff pathauto redirect scheduler token paragraphs paragraphs_library paragraphs_type_permissions components smart_trim styleguide views_contextual_filters_or -y
+	@docker-compose exec php $(project_root)/bin/drush $(drush_alias) en team_work -y
 # https://stackoverflow.com/a/6273809/1826109
 %: ## result when make target does not exist
 	@:
