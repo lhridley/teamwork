@@ -27,4 +27,4 @@ description: 'Project Teams are groups of users for the primary company that mak
 help: ''
 new_revision: true
 preview_mode: 1
-display_submitted: true
+display_submitted: false

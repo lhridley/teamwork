@@ -27,4 +27,4 @@ description: 'Company Teams are groups of users for a particular company that ma
 help: ''
 new_revision: true
 preview_mode: 1
-display_submitted: true
+display_submitted: false
