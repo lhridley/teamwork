@@ -3,8 +3,12 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.project_team.field_company
+    - field.field.node.project_team.field_project
+    - field.field.node.project_team.field_team_member
     - node.type.project_team
   module:
+    - entity_reference_revisions
     - field_layout
     - layout_discovery
     - user
@@ -17,9 +21,24 @@ targetEntityType: node
 bundle: project_team
 mode: teaser
 content:
-  links:
-    weight: 100
-    settings: {  }
-    third_party_settings: {  }
+  field_project:
+    type: entity_reference_label
+    weight: 0
     region: content
-hidden: {  }
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+  field_team_member:
+    type: entity_reference_revisions_entity_view
+    weight: 1
+    region: content
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+hidden:
+  content_moderation_control: true
+  field_company: true
+  links: true
