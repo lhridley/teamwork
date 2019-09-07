@@ -1,11 +1,11 @@
-uuid: 7cf55d68-82c9-466e-be81-80f4018e34bb
+uuid: dd4f249e-fb27-4f3d-b79b-90caf662c4d1
 langcode: en
 status: true
 dependencies:
   module:
     - node
 _core:
-  default_config_hash: DHwykB29t98hfROF9GDDns2bDRJ_jrCsIwgLJJuUP3o
+  default_config_hash: lhDB3sObUlklE-5evbT-PiJr5aLv4RjhG2TLvwBugc8
 id: company_team
 label: 'Company/Project Team'
 type: 'canonical_entities:node'

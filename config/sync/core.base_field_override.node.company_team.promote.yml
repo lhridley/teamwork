@@ -1,0 +1,24 @@
+uuid: a45f60ce-7afb-4f0c-b15b-e8a7d62a14ee
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.company_team
+_core:
+  default_config_hash: 1i6j9dYya1pDAv1jVsekvZZpZOmuF3WWU247ApfDvGs
+id: node.company_team.promote
+field_name: promote
+entity_type: node
+bundle: company_team
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

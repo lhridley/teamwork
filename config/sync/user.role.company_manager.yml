@@ -1,9 +1,9 @@
-uuid: a73e4ebe-07b5-450e-a7c6-f7754abe5df2
+uuid: 8454bfe6-beec-4ae9-a1d6-59bed2527efe
 langcode: en
 status: true
 dependencies: {  }
 _core:
-  default_config_hash: YNZKtj1aU_JY4mggRNhlMPzame_NPf--u-FRb0FN7og
+  default_config_hash: CRRty-zIEoZdJRNZKBfGRnXTaiiUgrom1O0cxIXVkgQ
 id: company_manager
 label: 'Company Manager'
 weight: 5

@@ -1,4 +1,4 @@
-uuid: 7f58af10-2607-4cd5-bcb8-d06a5457923f
+uuid: 1bded04b-b191-4b05-ad19-24719e22faf4
 langcode: en
 status: true
 dependencies:
@@ -8,6 +8,8 @@ dependencies:
 third_party_settings:
   field_permissions:
     permission_type: public
+_core:
+  default_config_hash: SNzAZZ__LUgNP0emeR0AloDEfQ9gCvG25PLBlkxph-E
 id: node.field_company_team
 field_name: field_company_team
 entity_type: node

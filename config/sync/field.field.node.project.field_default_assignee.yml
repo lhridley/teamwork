@@ -1,10 +1,12 @@
-uuid: 8f9c6bb8-cdff-42f4-bf87-befe12095abd
+uuid: ed0599dc-f3dd-4a13-ac37-43a2d4ef349a
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_default_assignee
     - node.type.project
+_core:
+  default_config_hash: 6D39Bo9R71NbEthpxUIdVnHaaj_9tscR1fTfOm61BJU
 id: node.project.field_default_assignee
 field_name: field_default_assignee
 entity_type: node

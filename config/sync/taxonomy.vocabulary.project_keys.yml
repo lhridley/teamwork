@@ -1,7 +1,9 @@
-uuid: 300ba31a-2d34-491f-8d24-6c1128bee7fc
+uuid: 409379e2-da93-4cf5-b58f-66eb37f5d046
 langcode: en
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: 21f25eEHHU0CMH5trlb3xQYpwk_IOf1ZzVcVReooerw
 name: 'Project Keys'
 vid: project_keys
 description: 'Project Keys (unique)'

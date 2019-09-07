@@ -1,9 +1,11 @@
-uuid: f602a932-d899-44f7-8cf3-ba1f6c3002b6
+uuid: f8e6a840-1fed-4d24-9128-4daa10f0bd93
 langcode: en
 status: true
 dependencies:
   module:
     - node
+_core:
+  default_config_hash: xXMad6iL7-AQTpeMQKRjqVjKfLf8XkUhnBIGvlXBHhI
 id: project
 label: Project
 type: 'canonical_entities:node'

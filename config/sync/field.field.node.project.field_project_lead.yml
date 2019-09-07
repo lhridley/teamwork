@@ -1,10 +1,12 @@
-uuid: ad19a217-9e63-4224-9708-9303cd2ac010
+uuid: 04eb0b53-0c72-42a5-a415-86648d9e0667
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_project_lead
     - node.type.project
+_core:
+  default_config_hash: _e-W1L2h_Fw7Nt_NP4DwhjxC9i0l2hna-_y3EVSNoFw
 id: node.project.field_project_lead
 field_name: field_project_lead
 entity_type: node

@@ -1,4 +1,4 @@
-uuid: 58541caa-5f71-41e2-bb39-5652a7881b1a
+uuid: 7134c84a-2747-4ef3-b458-1d7245fa968c
 langcode: en
 status: true
 dependencies:
@@ -23,11 +23,11 @@ third_party_settings:
     unpublish_required: false
     unpublish_revision: false
 _core:
-  default_config_hash: _W_W502ObrhwnnHsViaGEfUrnEJagr9Kvkx-4vIcBlc
+  default_config_hash: IAf17vhD4g3MlP7EY2Uq7XgvHN57E2wr8LUM_oIvPUA
 name: 'Company Team'
 type: company_team
 description: 'Company Teams are groups of users for a particular company that make up a team.  Companies can have more than one team, and users can belong to more than one team.  Company Teams are associated with Projects.'
 help: ''
 new_revision: true
 preview_mode: 1
-display_submitted: true
+display_submitted: false

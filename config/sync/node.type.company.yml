@@ -1,4 +1,4 @@
-uuid: 358d1878-9d54-4130-830a-feb469148ba8
+uuid: eeba896a-4b5f-45c2-8e40-66231a99af59
 langcode: en
 status: true
 dependencies:
@@ -23,11 +23,11 @@ third_party_settings:
     unpublish_required: false
     unpublish_revision: false
 _core:
-  default_config_hash: GYT4dX6ywvpiR6JRXo0WMmm4NJqc-hpZx9S88f90DUQ
+  default_config_hash: lcGyxtCGmdkg2dsmihayLtJ9FWuUH8kIyCta63NyMjo
 name: Company
 type: company
 description: 'Company Profile'
 help: ''
 new_revision: true
 preview_mode: 1
-display_submitted: true
+display_submitted: false

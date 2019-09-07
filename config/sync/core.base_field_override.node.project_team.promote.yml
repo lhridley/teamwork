@@ -1,0 +1,24 @@
+uuid: f188848c-4db2-4ca5-8cc3-cc263d7b295e
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.project_team
+_core:
+  default_config_hash: NkpHkkgd1ZriLZO7HQthWhbxs3Aab9DEVW-QeqP5Lfs
+id: node.project_team.promote
+field_name: promote
+entity_type: node
+bundle: project_team
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

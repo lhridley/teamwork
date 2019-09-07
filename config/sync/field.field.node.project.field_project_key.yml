@@ -1,4 +1,4 @@
-uuid: b3f13552-6516-41bd-b450-4a48b6974690
+uuid: 5b4e1cd7-aaee-4b3e-94a3-1e354312c490
 langcode: en
 status: true
 dependencies:
@@ -6,6 +6,8 @@ dependencies:
     - field.storage.node.field_project_key
     - node.type.project
     - taxonomy.vocabulary.project_keys
+_core:
+  default_config_hash: 8skmuYW6U63dOic42q-2nzcipzLbnsCEbfNlKf5vBcA
 id: node.project.field_project_key
 field_name: field_project_key
 entity_type: node

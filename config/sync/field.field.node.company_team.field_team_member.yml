@@ -1,4 +1,4 @@
-uuid: 9d4d4bd8-dba5-4e22-ae0a-a461d27bcf21
+uuid: 4c6cbe04-2eed-453b-9cab-45a43ed42024
 langcode: en
 status: true
 dependencies:
@@ -9,14 +9,14 @@ dependencies:
   module:
     - entity_reference_revisions
 _core:
-  default_config_hash: gQcwZWIZ41y01Udfpwmn6CR3YpYPMrLsju1wjRx0i_E
+  default_config_hash: 1owUkUy0JZheni1RguvtD0iosZXGI7y0KGFgx5UF2gY
 id: node.company_team.field_team_member
 field_name: field_team_member
 entity_type: node
 bundle: company_team
 label: 'Team Member'
 description: ''
-required: false
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''

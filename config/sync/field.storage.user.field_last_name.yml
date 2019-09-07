@@ -1,4 +1,4 @@
-uuid: 6de3a72e-3fa9-4178-9f31-0d53987ef64c
+uuid: a57a6f12-7ebc-4e80-9ad4-1ed50f574981
 langcode: en
 status: true
 dependencies:
@@ -8,6 +8,8 @@ dependencies:
 third_party_settings:
   field_permissions:
     permission_type: public
+_core:
+  default_config_hash: ow9yhrtqhXY_1WkjzegRWnDdJDSynePPsCR3VfAmXFM
 id: user.field_last_name
 field_name: field_last_name
 entity_type: user

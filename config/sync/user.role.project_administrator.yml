@@ -1,9 +1,9 @@
-uuid: d75149ab-12c9-486c-802b-d36727dc7da6
+uuid: cd429e85-7439-4eb0-89ee-001f8507ac31
 langcode: en
 status: true
 dependencies: {  }
 _core:
-  default_config_hash: IcCPUoxELhUOcwDMWcOkeASxSNkAhvrgTLQr8547IG8
+  default_config_hash: ruSekdpXkiSE-NmgtkMxC8Xa7QfMakOO_tFYoolGQho
 id: project_administrator
 label: 'Project Administrator'
 weight: 3

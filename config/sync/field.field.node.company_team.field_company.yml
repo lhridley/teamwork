@@ -1,4 +1,4 @@
-uuid: cd40109f-6395-4142-aca9-8218104d33e4
+uuid: e6931130-14aa-4510-9507-92d8dc54fe69
 langcode: en
 status: true
 dependencies:
@@ -7,14 +7,14 @@ dependencies:
     - node.type.company
     - node.type.company_team
 _core:
-  default_config_hash: dBucubaObU9R-ZuTvttfQgJaJ6iNJe4V6ThshiR43yY
+  default_config_hash: 450QEXLDdzAcbTndaWM7l-kZ5jjoYoCsDEfboaVKjW0
 id: node.company_team.field_company
 field_name: field_company
 entity_type: node
 bundle: company_team
 label: Company
 description: ''
-required: false
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''

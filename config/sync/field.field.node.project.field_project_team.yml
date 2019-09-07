@@ -1,4 +1,4 @@
-uuid: 16557971-377e-4bcc-a1fd-14da1ea63349
+uuid: 8e0da48b-d335-4f74-96b4-e61b5f271911
 langcode: en
 status: true
 dependencies:
@@ -6,6 +6,8 @@ dependencies:
     - field.storage.node.field_project_team
     - node.type.project
     - node.type.project_team
+_core:
+  default_config_hash: FWMcXWjj8aW-NiBuX1Fu6XAhVGy21HTRn_AfNnnBvDY
 id: node.project.field_project_team
 field_name: field_project_team
 entity_type: node

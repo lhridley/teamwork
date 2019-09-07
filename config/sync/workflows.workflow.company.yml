@@ -1,4 +1,4 @@
-uuid: 53dec2f2-a152-4da9-a0bb-1de8effe251c
+uuid: 7a624a45-7fc9-4625-93b0-f7c537a34eec
 langcode: en
 status: true
 dependencies:
@@ -9,7 +9,7 @@ dependencies:
   module:
     - content_moderation
 _core:
-  default_config_hash: fPJzLrQPcWUUvkjh9gYK7m--uscS0PVODY71iRnDclg
+  default_config_hash: ThKuWcVG2FIhuZNEmA-ZA-o24ltbJmVmiyzdj-r0R_Q
 id: company
 label: 'Company/Company Team/Project Team'
 type: content_moderation

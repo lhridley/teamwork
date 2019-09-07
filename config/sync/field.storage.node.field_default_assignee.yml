@@ -1,4 +1,4 @@
-uuid: 66fb98f8-2ab5-4ecc-bd1b-d92409f43db5
+uuid: 50a8ac02-65b8-4702-b7ba-15c475dd486c
 langcode: en
 status: true
 dependencies:
@@ -9,6 +9,8 @@ dependencies:
 third_party_settings:
   field_permissions:
     permission_type: public
+_core:
+  default_config_hash: prfaQXmXbgG0W5bCzY_38PfhIkJXeUgV4SskIMUyckU
 id: node.field_default_assignee
 field_name: field_default_assignee
 entity_type: node

@@ -1,4 +1,4 @@
-uuid: 3114d619-dfc8-4964-9603-5e27b469fa7f
+uuid: 4a7a4d29-c415-4be9-8327-0668555e9786
 langcode: en
 status: true
 dependencies:
@@ -6,6 +6,8 @@ dependencies:
     - field.storage.node.field_company
     - node.type.company
     - node.type.project
+_core:
+  default_config_hash: uMphsK8wYKi_qITmWXE3QnLdGe0iO5h2WEWCDjKjhV4
 id: node.project.field_company
 field_name: field_company
 entity_type: node
@@ -22,7 +24,8 @@ settings:
     target_bundles:
       company: company
     sort:
-      field: _none
+      field: title
+      direction: ASC
     auto_create: false
     auto_create_bundle: ''
 field_type: entity_reference

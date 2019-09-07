@@ -1,4 +1,4 @@
-uuid: 84035f6f-a947-414a-9a55-6ecb49ed8018
+uuid: 73839b5d-7e6b-4ba1-8c2b-98987b73c5cf
 langcode: en
 status: true
 dependencies:
@@ -19,6 +19,8 @@ third_party_settings:
   field_layout:
     id: layout_onecol
     settings: {  }
+_core:
+  default_config_hash: quR8WQvkAGdZzwyG5S9aB9rvRE159AT8jfAqRaBE614
 id: node.project.teaser
 targetEntityType: node
 bundle: project
