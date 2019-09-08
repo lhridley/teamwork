@@ -1,4 +1,4 @@
-uuid: c8b4664e-984a-48f9-bef3-0d1fcb6fe24b
+uuid: 0b40d946-329a-49d7-8037-6b79fdc3238d
 langcode: en
 status: true
 dependencies:
@@ -14,7 +14,7 @@ entity_type: node
 bundle: project
 label: 'Project Team'
 description: ''
-required: true
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''

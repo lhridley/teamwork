@@ -1,4 +1,4 @@
-uuid: 0c0a7f78-4e56-4253-a682-72409d07a3f5
+uuid: d2a5b934-2386-4274-904b-979e3d7924a7
 langcode: en
 status: true
 dependencies:
@@ -8,7 +8,7 @@ dependencies:
     - node
     - user
 _core:
-  default_config_hash: VNQzBumn6RmCaIe1MIswtICCFKeSKJcpg9J7iaiao0c
+  default_config_hash: g283J_ag5p1ZAavh1hnyuDiyfp9BF9I5-EoKStRl69Y
 id: primary_company
 label: 'Primary Company'
 module: views
@@ -39,7 +39,6 @@ display:
           replica: false
           query_comment: ''
           query_tags: {  }
-          contextual_filters_or: false
       exposed_form:
         type: basic
         options:
