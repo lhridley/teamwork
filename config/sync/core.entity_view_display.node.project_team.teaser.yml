@@ -1,11 +1,15 @@
-uuid: 2a7eec6f-f82a-43d5-8200-e8067ec42481
+uuid: 09078b8d-18e7-4c3f-b8b8-74bebca255de
 langcode: en
 status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.project_team.field_company
+    - field.field.node.project_team.field_project
+    - field.field.node.project_team.field_team_member
     - node.type.project_team
   module:
+    - entity_reference_revisions
     - field_layout
     - layout_discovery
     - user
@@ -14,15 +18,30 @@ third_party_settings:
     id: layout_onecol
     settings: {  }
 _core:
-  default_config_hash: lNJXEENo2I_QZBgi1qwvHPFooiDWyJ-MBIS_E7GX2KE
+  default_config_hash: xQrAJuCkL6Q4X5_JtecCkZTbu5Pfkt1USQPRp5lMrCY
 id: node.project_team.teaser
 targetEntityType: node
 bundle: project_team
 mode: teaser
 content:
-  links:
-    weight: 100
-    settings: {  }
-    third_party_settings: {  }
+  field_project:
+    type: entity_reference_label
+    weight: 0
     region: content
-hidden: {  }
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+  field_team_member:
+    type: entity_reference_revisions_entity_view
+    weight: 1
+    region: content
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+hidden:
+  content_moderation_control: true
+  field_company: true
+  links: true

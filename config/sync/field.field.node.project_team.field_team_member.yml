@@ -1,0 +1,36 @@
+uuid: 6154d0af-417d-4441-a121-2725e15a4eee
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_team_member
+    - node.type.project_team
+    - paragraphs.paragraphs_type.team_member
+  module:
+    - entity_reference_revisions
+_core:
+  default_config_hash: gupY2ZT6r4rm3a3iFM5DLmTgvuW4kOtTI2cSaQ9FY54
+id: node.project_team.field_team_member
+field_name: field_team_member
+entity_type: node
+bundle: project_team
+label: 'Team Member'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      team_member: team_member
+    target_bundles_drag_drop:
+      from_library:
+        weight: 3
+        enabled: false
+      team_member:
+        enabled: true
+        weight: 4
+field_type: entity_reference_revisions
