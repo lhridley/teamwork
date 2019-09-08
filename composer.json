@@ -35,6 +35,7 @@
         "drupal/ckeditor_uploadimage": "^1.5",
         "drupal/claro": "^1.0",
         "drupal/components": "^1.1",
+        "drupal/config_inspector": "^1.0",
         "drupal/config_split": "^1.4",
         "drupal/console": "^1.0.2",
         "drupal/core": "^8.7.0",
