@@ -8,19 +8,18 @@ dependencies:
   - drupal:field_layout
   - drupal:taxonomy
   - drupal:layout_discovery
-  - drupal:menu_ui
+  #- drupal:menu_ui
   - drupal:node
   - drupal:user
   - drupal:workflows
-  - drupal:ctools
-  - drupal:email_registration
+  #- drupal:ctools
   - drupal:entity_reference_revisions
-  - drupal:entity_usage
-  - drupal:field_permissions
+  #- drupal:entity_usage
+  #- drupal:field_permissions
   - drupal:pathauto
   - drupal:paragraphs
-  - drupal:paragraphs_library
-  - drupal:scheduler
+  #- drupal:paragraphs_library
+#  - drupal:scheduler
   - drupal:token
   - drupal:views
 

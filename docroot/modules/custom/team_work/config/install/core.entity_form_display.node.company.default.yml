@@ -10,7 +10,6 @@ dependencies:
     - field_layout
     - layout_discovery
     - path
-    - scheduler
 third_party_settings:
   field_layout:
     id: layout_onecol

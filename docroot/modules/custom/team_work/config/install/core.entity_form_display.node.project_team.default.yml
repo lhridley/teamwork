@@ -13,7 +13,6 @@ dependencies:
     - layout_discovery
     - paragraphs
     - path
-    - scheduler
 third_party_settings:
   field_layout:
     id: layout_onecol

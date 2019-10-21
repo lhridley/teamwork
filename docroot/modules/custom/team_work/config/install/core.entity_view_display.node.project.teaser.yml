@@ -8,7 +8,6 @@ dependencies:
     - field.field.node.project.field_default_assignee
     - field.field.node.project.field_project_key
     - field.field.node.project.field_project_lead
-    - field.field.node.project.field_project_team
     - node.type.project
   module:
     - field_layout
@@ -55,4 +54,3 @@ content:
 hidden:
   field_company_team: true
   field_default_assignee: true
-  field_project_team: true

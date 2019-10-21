@@ -7,14 +7,12 @@ dependencies:
     - field.field.node.project.field_default_assignee
     - field.field.node.project.field_project_key
     - field.field.node.project.field_project_lead
-    - field.field.node.project.field_project_team
     - node.type.project
   module:
     - content_moderation
     - field_layout
     - layout_discovery
     - path
-    - scheduler
 third_party_settings:
   field_layout:
     id: layout_onecol
@@ -68,15 +66,6 @@ content:
     region: content
   field_project_lead:
     weight: 3
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: entity_reference_autocomplete
-    region: content
-  field_project_team:
-    weight: 4
     settings:
       match_operator: CONTAINS
       size: 60
