@@ -170,8 +170,6 @@
         ],
         "patches": {
             "drupal/core": {
-                "User can't reference unpublished content even when he has access to it": "https://www.drupal.org/files/issues/2019-03-26/user_cant_reference_unpublished_content-2845144-24.patch",
-                "Add title attribute to oEmbed iframe for accessibility": "https://www.drupal.org/files/issues/2019-04-25/3021452-18.patch",
                 "template_preprocess_username fails to set language attribute":"https://www.drupal.org/files/issues/2019-03-24/drupal-template_preprocess_username-language-attribute-3042984-2.patch",
                 "Cannot use relationship for rendered entity on Views": "https://www.drupal.org/files/issues/2019-05-04/2457999-194.patch",
                 "Media Browser AJAX error: Broken title in modal dialog when title is a render array": "https://www.drupal.org/files/issues/2019-05-02/2663316-70.patch",
