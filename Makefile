@@ -255,8 +255,15 @@ initialize-db: #used in conjunction with initialize-site, comment out once a see
 
 initialize-site: #used in conjunction with initialize-db, comment out once a seed db is established and use import-db instead
 	@docker-compose exec php $(project_root)/bin/drush $(drush_alias) pm-uninstall comment contact history quickedit -y
-	@docker-compose exec php $(project_root)/bin/drush $(drush_alias) en address admin_toolbar_tools blazy blazy_ui block_field content_moderation ctools_block ctools_views email_registration inline_responsive_images linkit field_layout field_permissions focal_point ckeditor_uploadimage block_exclude_pages datetime_range telephone_formatter responsive_bg_image_formatter easy_breadcrumb entity entity_embed imageapi_optimize_resmushit media metatag responsive_image module_filter media_library menu_link_attributes environment_indicator environment_indicator_ui entity_reference_revisions telephone diff pathauto redirect scheduler token paragraphs paragraphs_library paragraphs_type_permissions components smart_trim styleguide views_contextual_filters_or -y
+	#@docker-compose exec php $(project_root)/bin/drush $(drush_alias) en address admin_toolbar_tools blazy blazy_ui block_field content_moderation ctools_block ctools_views email_registration inline_responsive_images linkit field_layout field_permissions focal_point ckeditor_uploadimage block_exclude_pages datetime_range telephone_formatter responsive_bg_image_formatter easy_breadcrumb entity entity_embed imageapi_optimize_resmushit media metatag responsive_image module_filter media_library menu_link_attributes environment_indicator environment_indicator_ui entity_reference_revisions telephone diff pathauto redirect scheduler token paragraphs paragraphs_library paragraphs_type_permissions components smart_trim styleguide views_contextual_filters_or -y
 	@docker-compose exec php $(project_root)/bin/drush $(drush_alias) en team_work -y
+
+test-serializer: ##@testing Test serializing node data (assumes one node has been created)
+	@docker-compose exec php $(project_root)/bin/drush $(drush_alias) en serialization -y
+	@docker-compose exec php $(project_root)/bin/drush $(drush_alias) ev 'var_dump(\Drupal::service("serializer")->serialize(\Drupal\user\Entity\User::load(2), "json", ["plugin_id" => "entity"]));'
+	@docker-compose exec php $(project_root)/bin/drush $(drush_alias) ev 'var_dump(\Drupal::service("serializer")->serialize(\Drupal\node\Entity\Node::load(2), "json", ["plugin_id" => "entity"]));'
+	@docker-compose exec php $(project_root)/bin/drush $(drush_alias) ev 'var_dump(\Drupal::service("serializer")->serialize(\Drupal\paragraphs\Entity\Paragraph::load(1), "json", ["plugin_id" => "entity"]));'
+
 # https://stackoverflow.com/a/6273809/1826109
 %: ## result when make target does not exist
 	@:

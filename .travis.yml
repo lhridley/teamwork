@@ -42,6 +42,6 @@ before_script:
 script:
   - make phpcs
 #  - make fetest
-#  - make phpunit
-  - make behat
-  - make wcag2AA
+  - make phpunit
+#  - make behat
+#  - make wcag2AA
