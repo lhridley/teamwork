@@ -92,12 +92,13 @@ class TeamWorkNodeTypesTestCase extends TeamWorkFunctionalTestBase {
     $this->assertEquals($node_type->status(), TRUE);
     $this->assertEquals($node_type->getPreviewMode(), DRUPAL_OPTIONAL);
     $this->assertEquals($node_type->isNewRevision(), TRUE);
-    $this->assertEquals($node_type->displaySubmitted(), TRUE);
+    $this->assertEquals($node_type->displaySubmitted(), FALSE);
     $this->assertEquals($node_type->get('name'), 'Company Team');
     $this->assertEquals($node_type->getDescription(), "Company Teams are groups of users for a particular company that make up a team.  Companies can have more than one team, and users can belong to more than one team.  Company Teams are associated with Projects.");
+
     $this->assertEquals($fields['title']->getLabel(), 'Team Name');
-    $this->assertEquals($fields['promote']->getDefaultValueLiteral(), [['value' => TRUE]]);
-    $this->assertEquals($fields['sticky']->getDefaultValueLiteral(), [['value' => TRUE]]);
+    $this->assertEquals($fields['promote']->getDefaultValueLiteral(), [['value' => FALSE]]);
+    $this->assertEquals($fields['sticky']->getDefaultValueLiteral(), [['value' => FALSE]]);
 
     // Getting info on added fields.
     $field_ids = [];
@@ -124,7 +125,7 @@ class TeamWorkNodeTypesTestCase extends TeamWorkFunctionalTestBase {
 
     // Verify field_team_member field settings.
     $this->assertEquals($fields['field_team_member']->get('field_type'), 'entity_reference_revisions');
-    $this->assertEquals($fields['field_company']->isRequired(), TRUE);
+    $this->assertEquals($fields['field_team_member']->isRequired(), TRUE);
     $this->assertEquals($fields['field_team_member']->getFieldStorageDefinition()->getCardinality(), FieldStorageDefinitionInterface::CARDINALITY_UNLIMITED);
 
     $handler_settings = $fields['field_team_member']->getSetting('handler_settings');
@@ -133,11 +134,10 @@ class TeamWorkNodeTypesTestCase extends TeamWorkFunctionalTestBase {
 
     $this->assertCount(2, $handler_settings['target_bundles_drag_drop']);
     $this->assertEquals($handler_settings['target_bundles_drag_drop']['from_library']['enabled'], FALSE);
-    $this->assertEquals($handler_settings['target_bundles_drag_drop']['team_member']['enabled'], FALSE);
+    $this->assertEquals($handler_settings['target_bundles_drag_drop']['team_member']['enabled'], TRUE);
 
     $handler = $fields['field_team_member']->getSetting('handler');
     $this->assertEquals($handler, 'default:paragraph');
-
   }
 
   /**
@@ -155,7 +155,7 @@ class TeamWorkNodeTypesTestCase extends TeamWorkFunctionalTestBase {
     $this->assertEquals($node_type->get('name'), 'Project');
     $this->assertEquals($node_type->getDescription(), "Company Projects");
     $this->assertEquals($fields['title']->getLabel(), 'Name');
-    $this->assertEquals($fields['promote']->getDefaultValueLiteral(), [['value' => TRUE]]);
+    $this->assertEquals($fields['promote']->getDefaultValueLiteral(), [['value' => FALSE]]);
     $this->assertEquals($fields['sticky']->getDefaultValueLiteral(), [['value' => FALSE]]);
 
     // Getting info on added fields.
@@ -170,7 +170,7 @@ class TeamWorkNodeTypesTestCase extends TeamWorkFunctionalTestBase {
 
     // Verify field_company field settings.
     $this->assertEquals($fields['field_company']->get('field_type'), 'entity_reference');
-    $this->assertEquals($fields['field_company']->isRequired(), TRUD);
+    $this->assertEquals($fields['field_company']->isRequired(), TRUE);
     $this->assertEquals($fields['field_company']->getFieldStorageDefinition()->getCardinality(), 1);
 
     $handler_settings = $fields['field_company']->getSetting('handler_settings');
