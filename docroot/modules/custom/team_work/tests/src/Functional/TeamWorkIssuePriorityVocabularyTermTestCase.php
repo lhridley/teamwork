@@ -32,7 +32,7 @@ class TeamWorkIssuePriorityVocabularyTermTestCase extends TeamWorkFunctionalTest
 
     $this->vid = 'issue_priority';
 
-    $terms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree($this->vid,0,NULL,TRUE);
+    $terms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree($this->vid, 0, NULL, TRUE);
 
     foreach ($terms as $term) {
       $this->terms[$term->id()] = $term->getName();

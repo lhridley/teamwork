@@ -3,6 +3,7 @@
 namespace Drupal\Tests\team_work\Functional;
 
 use Drupal\taxonomy\Entity\Vocabulary;
+
 /**
  * Test that proper vocabularies exist.
  *
@@ -10,26 +11,14 @@ use Drupal\taxonomy\Entity\Vocabulary;
  */
 class TeamWorkVocabulariesTestCase extends TeamWorkFunctionalTestBase {
 
-
-  /**
-   * {@inheritdoc}
-   */
-  protected function setUp() {
-    // Make sure to complete the normal setup steps first.
-    parent::setUp();
-
-    // Get list of vocabularies on the site.
-
-  }
-
-
   /**
    * Make sure everything works to this point.
    */
   public function testVocabulariesArePresent() {
-  	$vocabularies = Vocabulary::loadMultiple();
+    // Get list of vocabularies on the site.
+    $vocabularies = Vocabulary::loadMultiple();
 
-  	// Checks that there are 7 vocabularies.
+    // Checks that there are 7 vocabularies.
     $this->assertCount(7, $vocabularies);
 
     // Checks for the existence of the correct vocabularies.

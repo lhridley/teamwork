@@ -32,7 +32,7 @@ class TeamWorkTeamRolesVocabularyTermTestCase extends TeamWorkFunctionalTestBase
 
     $this->vid = 'team_roles';
 
-    $terms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree($this->vid,0,NULL,TRUE);
+    $terms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree($this->vid, 0, NULL, TRUE);
 
     foreach ($terms as $term) {
       $this->terms[$term->id()] = $term->getName();
