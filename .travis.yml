@@ -34,7 +34,7 @@ before_script:
   - sudo rm docker/php/conf.d/xdebug.ini
   - cp .env.example .env
   - make devinit
-  - sudo chmod -R a+rx docroot/sites/default
+  - sudo chmod -Rf 777 docroot/sites/default
   - sudo chown -R travis:travis docroot/sites/default
   - make cache-reset
 
